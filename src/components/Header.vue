@@ -26,15 +26,18 @@ export default {
         <div 
         class="full-page-menu" 
         v-if="isMenuVisible">
-          <span 
-          @click="toggleMenu">Close</span>
-          <ul>
+        <div>
+          <img src="../assets/images/avada-music-logo.png" alt=""
+          @click="toggleMenu"
+          class="escape"></img>
+        </div>
+          <ul class="menu text-center">
             <li>Home</li>
-            <li>Latest News</li>
-            <li>Music</li>
+            <li>Meet The Band</li>
             <li>Live Dates</li>
-            <li>Shop</li>
-            <li>Contact</li>
+            <li>Latest News</li>
+            <li>Albums</li>
+            <li>Fans</li>
           </ul>
         </div>
       </div>
@@ -119,6 +122,10 @@ export default {
     border: solid 1px white;
   }
 
+.escape{
+  cursor: pointer;
+}
+
   .full-page-menu {
   position: fixed;
   top: 0;
@@ -135,5 +142,22 @@ export default {
   align-items: center;
   transition: opacity 0.3s ease;
   opacity: 1; 
+}
+
+.menu{
+  list-style: none;
+  color: grey;
+  li{
+    font-size: 2rem;
+    margin: 20px;
+    cursor: pointer;
+    &:hover{
+      color: white;
+    }
+  }
+}
+
+  .fa-bars{
+    font-size: 2rem;
 }
 </style>
