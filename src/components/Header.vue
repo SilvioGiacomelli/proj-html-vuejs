@@ -1,5 +1,5 @@
 <script>
-import {store} from '../data/store'
+import {store} from './partials/data/store'
   export default {
     data(){
       return{
