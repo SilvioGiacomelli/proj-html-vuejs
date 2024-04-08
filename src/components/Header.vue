@@ -1,18 +1,42 @@
 <script>
 import {store} from './partials/data/store'
-  export default {
-    data(){
-      return{
-      }
+export default {
+  data(){
+    return{
+      isMenuVisible: false, 
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuVisible = !this.isMenuVisible; 
     }
   }
+}
 </script>
 
 <template>
   <header class="container-fluid">
     <div class="d-flex justify-content-between headbar">
         <img src="../assets/images/avada-music-logo.png" alt="">
-        <span class="burger"><i class="fa-solid fa-bars"></i></span>
+        <span 
+        class="burger"
+        @click="toggleMenu">
+          <i class="fa-solid fa-bars"></i>
+        </span>
+        <div 
+        class="full-page-menu" 
+        v-if="isMenuVisible">
+          <span 
+          @click="toggleMenu">Close</span>
+          <ul>
+            <li>Home</li>
+            <li>Latest News</li>
+            <li>Music</li>
+            <li>Live Dates</li>
+            <li>Shop</li>
+            <li>Contact</li>
+          </ul>
+        </div>
       </div>
     <div class="row mt-5 ">
       <div class="col-12 text-center center">
@@ -31,6 +55,7 @@ import {store} from './partials/data/store'
 
 
 <style lang="scss" scoped>
+@import '../assets/scss/partials/_variables.scss';
 
   header {
     width: 100%; 
@@ -94,4 +119,21 @@ import {store} from './partials/data/store'
     border: solid 1px white;
   }
 
+  .full-page-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $header-bg-collapse;
+  z-index: 1050; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  opacity: 1; 
+}
 </style>

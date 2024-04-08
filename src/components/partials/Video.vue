@@ -8,9 +8,12 @@
     <div class="row">
       <div class="col-12 d-flex align-items-center justify-content-center flex-column">
         <p class="text-center"> <em>"I just listened to it and said to myself, "Man, Ireally love this <br>album.""Still, today, it just sounds so fresh. It sounds full od ideas. <br>These guys knew what they were doing. They're good. And they're <br>inventive. I haven't heard anything this year that's as inventive. I <br>don't really expect to."</em></p>
-        <img src="../../assets/images/band_interview_play_icon.png" class="my-5">
+        <img 
+        src="../../assets/images/band_interview_play_icon.png" 
+        class="my-5 play">
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -29,5 +32,11 @@
     color: white;
     font-size: 1.5rem;
     margin-top: 10%;}
+}
+
+.play{
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
 }
 </style>
