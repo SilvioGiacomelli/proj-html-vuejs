@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container mb-5">
       <div class="row">
         <div class="col-12">
           <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -77,6 +77,9 @@
         </div>
       </div>
     </div>
+    <div class="dates d-flex align-items-center justify-content-center ">
+      <h3>VIEW ALL LIVE DATES</h3>
+    </div>
   </div>
 </template>
 
@@ -120,5 +123,14 @@ button{
     background-color: $livedates-text;
   }
 }
+
+.dates{
+    background-color: $news-background;
+    height: 300px;
+    h3{
+      font-size: 2rem;
+      color: white;
+    }
+  }
   
 </style>

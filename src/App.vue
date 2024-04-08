@@ -3,10 +3,12 @@ import axios from 'axios';
 import {store} from './components/partials/data/store';
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
+import Footer from './components/Footer.vue';
   export default {
     components:{
       Header,
       Main,
+      Footer,
     },
     data(){
       return{
@@ -21,6 +23,8 @@ import Main from './components/Main.vue';
     <Header />
 
     <Main />
+
+    <Footer />
 
   </template>
 
