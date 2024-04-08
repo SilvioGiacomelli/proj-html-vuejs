@@ -26,8 +26,8 @@ export default {
         <div 
         class="full-page-menu" 
         v-if="isMenuVisible">
-        <div>
-          <img src="../assets/images/avada-music-logo.png" alt=""
+        <div class="logo-container">
+          <img src="../assets/images/avada-music-logo.png" alt="AVADA MUSIC"
           @click="toggleMenu"
           class="escape"></img>
         </div>
@@ -122,9 +122,9 @@ export default {
     border: solid 1px white;
   }
 
-.escape{
-  cursor: pointer;
-}
+  .escape{
+    cursor: pointer;
+  }
 
   .full-page-menu {
   position: fixed;
@@ -142,6 +142,7 @@ export default {
   align-items: center;
   transition: opacity 0.3s ease;
   opacity: 1; 
+  padding-top: 20px;
 }
 
 .menu{
@@ -159,5 +160,13 @@ export default {
 
   .fa-bars{
     font-size: 2rem;
+}
+
+.logo-container {
+  align-self: flex-start;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  padding: 20px; 
 }
 </style>
