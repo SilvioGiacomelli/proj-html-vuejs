@@ -10,11 +10,11 @@ import {store} from './partials/data/store'
 
 <template>
   <header class="container-fluid">
-    <div class="row">
-      <div class="col-12 d-flex justify-content-between headbar">
+    <div class="d-flex justify-content-between headbar">
         <img src="../assets/images/avada-music-logo.png" alt="">
         <span class="burger"><i class="fa-solid fa-bars"></i></span>
       </div>
+    <div class="row mt-5 ">
       <div class="col-12 text-center center">
         <h1 class="text-center">Untold Stories</h1>
         <h6>There is an untold story behind every favorite song.</h6>
@@ -36,7 +36,7 @@ import {store} from './partials/data/store'
     width: 100%; 
     height: 1300px; 
     background-image: url('../assets/images/home_slider.jpg'); 
-    background-position: center center; 
+    background-position: center; 
     background-size: cover; 
     background-repeat: no-repeat; 
     display: flex; 

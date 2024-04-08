@@ -1,11 +1,11 @@
 <script>
-import Card from './partials/Card.vue'
+import Video from './partials/Video.vue'
 import Latestbandnews from './partials/Latestbandnews.vue'
 import Musicislife from './partials/Musicislife.vue'
 import {store} from './partials/data/store'
   export default {
     components:{
-      Card,
+      Video,
       Musicislife,
       Latestbandnews
 
@@ -21,6 +21,7 @@ import {store} from './partials/data/store'
 <template>
   <Musicislife />
   <Latestbandnews />
+  <Video />
 </template>
 
 
