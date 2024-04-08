@@ -14,7 +14,7 @@ import {store} from '../data/store'
 </script>
 <template>
   <main>
-
+    
   </main>
 </template>
 
