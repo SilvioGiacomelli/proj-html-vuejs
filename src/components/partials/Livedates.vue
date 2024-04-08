@@ -98,11 +98,11 @@
   color: white;
   h2{
     margin-top: 4%;
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: bolder;
     }
   p{
-    font-size: 1rem;
+    font-size: 2rem;
     margin: 2%;
     color: $livedates-text;
     margin: 0 20%;

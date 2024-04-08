@@ -27,10 +27,10 @@
   background-repeat:no-repeat;
   background-position: center;
   width: 100%;
-  min-height: 700px;
+  min-height: 1000px;
   p{
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 10%;}
 }
 
@@ -39,4 +39,4 @@
   height: 100px;
   cursor: pointer;
 }
-</style>
+</style>s

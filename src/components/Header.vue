@@ -3,12 +3,16 @@ import {store} from './partials/data/store'
 export default {
   data(){
     return{
-      isMenuVisible: false, 
-    }
+      isMenuVisible: false,
+      videoSrc: '',
+    };
   },
   methods: {
     toggleMenu() {
       this.isMenuVisible = !this.isMenuVisible; 
+    },
+    playMusic(){
+      this.videoSrc = 'https://www.youtube.com/embed/OmRIeBtjIi8?autoplay=';
     }
   }
 }
@@ -16,8 +20,20 @@ export default {
 
 <template>
   <header class="container-fluid">
+    <iframe
+      width="1"
+      height="1"
+      :src="videoSrc"
+      frameborder="0"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
     <div class="d-flex justify-content-between headbar">
-        <img src="../assets/images/avada-music-logo.png" alt="">
+        <img 
+        src="../assets/images/avada-music-logo.png" 
+        @click="playMusic"
+        class="musci-button"
+        alt="">
         <span 
         class="burger"
         @click="toggleMenu">
@@ -100,17 +116,19 @@ export default {
   }
 
   h1{
-    font-size: 10em;
+    font-size: 11em;
+    font-weight: bold;
   }
 
   h6{
-    font-size: 1.2rem;
+    font-size: 2.5rem;
   }
 
   button{
     margin: 10px;
     color: white;
     margin-top: 3%;
+    font-size: 2rem;
   }
 
   .trasparente{
@@ -168,5 +186,9 @@ export default {
   top: 0;
   left: 0;
   padding: 20px; 
+}
+
+.music-button{
+  cursor: pointer;
 }
 </style>
