@@ -12,7 +12,7 @@ export default {
       this.isMenuVisible = !this.isMenuVisible; 
     },
     playMusic(){
-      this.videoSrc = 'https://www.youtube.com/embed/OmRIeBtjIi8?autoplay=';
+      this.videoSrc = 'https://www.youtube.com/embed/OmRIeBtjIi8?autoplay=1';
     }
   }
 }
@@ -25,8 +25,8 @@ export default {
       height="1"
       :src="videoSrc"
       frameborder="0"
-      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
+      allow="encrypted-media;"
+      >
     </iframe>
     <div class="d-flex justify-content-between headbar">
         <img 
@@ -129,6 +129,10 @@ export default {
     color: white;
     margin-top: 3%;
     font-size: 2rem;
+    &:hover{
+      background-color: white;
+      color: black;
+    }
   }
 
   .trasparente{

@@ -96,7 +96,7 @@ export default {
   color: white;
   h2{
     margin-top: 4%;
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: bolder;
     }
   p{
