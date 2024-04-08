@@ -118,6 +118,13 @@ export default {
   .card{
     background-color: $latest-card-bg;
     margin: 1%;
+      &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+        p {
+          color: white;
+        }
+      }
     h5{
       font-size: 1.5rem;
       color: $latest-title;
