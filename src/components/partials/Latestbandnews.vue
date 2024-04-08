@@ -1,7 +1,12 @@
 <script>
-  export default {
-    
+export default {
+  methods: {
+    //FUNZIONE PER APRIRE LA PAGINA DELLE NEWS
+    goToNewsPage() {
+      window.open('https://www.rollingstone.it/musica/news-musica/', '_blank');
+    }
   }
+}
 </script>
 
 <template>
@@ -73,9 +78,12 @@
         </div>
       </div>
     </div>
-    <div class="news d-flex align-items-center justify-content-center ">
-      <h3>VIEW ALL LATEST NEWS</h3>
-    </div>
+    <div 
+    class="news d-flex align-items-center justify-content-center" 
+    @click="goToNewsPage">
+  <h3>VIEW ALL LATEST NEWS</h3>
+</div>
+
   </div>
 </template>
 

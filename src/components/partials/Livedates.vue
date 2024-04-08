@@ -1,6 +1,10 @@
 <script>
   export default {
-    
+    methods: {
+      vaiAiTour() {
+      window.open('https://rollingstones.com/tour//', '_blank');
+    }
+    }
   }
 </script>
 
@@ -77,7 +81,9 @@
         </div>
       </div>
     </div>
-    <div class="dates d-flex align-items-center justify-content-center ">
+    <div 
+    class="dates d-flex align-items-center justify-content-center"
+    @click="vaiAiTour">
       <h3>VIEW ALL LIVE DATES</h3>
     </div>
   </div>
