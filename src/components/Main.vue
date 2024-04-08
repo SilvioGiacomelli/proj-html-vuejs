@@ -2,13 +2,14 @@
 import Video from './partials/Video.vue'
 import Latestbandnews from './partials/Latestbandnews.vue'
 import Musicislife from './partials/Musicislife.vue'
+import Livedates from './partials/Livedates.vue'
 import {store} from './partials/data/store'
   export default {
     components:{
       Video,
       Musicislife,
-      Latestbandnews
-
+      Latestbandnews,
+      Livedates,
     },
     data(){
       return{
@@ -22,6 +23,7 @@ import {store} from './partials/data/store'
   <Musicislife />
   <Latestbandnews />
   <Video />
+  <Livedates />
 </template>
 
 
