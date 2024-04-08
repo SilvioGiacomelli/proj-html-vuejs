@@ -1,11 +1,14 @@
 <script>
 import Card from './partials/Card.vue'
-import Latestbandnews from './partials/Latestbandnews.vue';
-import Musicislife from './partials/Musicislife.vue';
+import Latestbandnews from './partials/Latestbandnews.vue'
+import Musicislife from './partials/Musicislife.vue'
 import {store} from './partials/data/store'
   export default {
     components:{
-      Card
+      Card,
+      Musicislife,
+      Latestbandnews
+
     },
     data(){
       return{
@@ -14,11 +17,10 @@ import {store} from './partials/data/store'
     }
   }
 </script>
+
 <template>
-  <main>
-    <Musicislife />
-    <Latestbandnews />
-  </main>
+  <Musicislife />
+  <Latestbandnews />
 </template>
 
 
