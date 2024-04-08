@@ -142,12 +142,21 @@
     justify-content: space-between;
   }
 
-  .news{
-    background-color: $news-background;
-    height: 300px;
-    h3{
-      font-size: 2rem;
-      color: white;
+  .news {
+  background-color: $news-background;
+  height: 300px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white; 
+    h3 {
+      color: black;
     }
   }
+}
+
+h3 {
+  font-size: 2rem;
+  color: white; 
+}
 </style>

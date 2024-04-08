@@ -127,10 +127,17 @@ button{
 .dates{
     background-color: $news-background;
     height: 300px;
-    h3{
-      font-size: 2rem;
-      color: white;
+    cursor: pointer;
+    &:hover {
+    background-color: white;
+    h3 {
+      color: black;
     }
   }
-  
+}
+
+h3 {
+  font-size: 2rem;
+  color: white; 
+}
 </style>
