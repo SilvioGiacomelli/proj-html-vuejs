@@ -115,36 +115,66 @@ export default {
   margin-bottom: 1%;
   }
 
-  .card{
-    background-color: $latest-card-bg;
-    margin: 1%;
-      &:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
-        p {
-          color: white;
-        }
+.card {
+  position: relative;
+  overflow: hidden;
+  margin: 1%;
+  background-color: $latest-card-bg;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.4);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+    z-index: 9;
+
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 0, 0, 0.5); 
+    }
+
+    .card-body {
+      
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2; 
+      opacity: 1;
+
+      h5 {
+        color: white; 
+        font-size: 1.5rem; 
       }
-    h5{
-      font-size: 1.5rem;
-      color: $latest-title;
+
+      p {
+        display: none; 
+      }
+    }
+
+    img {
+      opacity: 0.3; 
     }
   }
-
-  .card-body{
-      max-height: 25%;
-    }
+}
 
   .cinquecento img{
-    height: 450px;
-    object-fit: cover;
-  }
+      height: 450px;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
 
   .mille img{
     height: 900px;
     object-fit: cover;
+    transition: opacity 0.3s ease;
   }
-
+  
   .right{
     display: flex;
     flex-direction: column;
