@@ -35,11 +35,11 @@
   color: white;
   h2{
     margin-top: 4%;
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: bolder;
     }
   p{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 4%;
     color: $music-islife-text;
     }

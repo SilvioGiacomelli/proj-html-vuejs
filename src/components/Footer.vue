@@ -22,7 +22,9 @@ export default {
     src="../assets/images/avada-music-logo.png"
     alt="">
     <ul class="d-flex lista-indice">
-      <li v-for="(menuItem, index) in menuItems" :key="index">{{ menuItem }}</li>
+      <li 
+      v-for="(menuItem, index) in menuItems" 
+      :key="index">{{ menuItem }}</li>
     </ul>
   </div>
   <div class="container-fluid footer-down d-flex justify-content-between align-items-center px-5">

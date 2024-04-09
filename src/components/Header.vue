@@ -21,7 +21,11 @@ export default {
       this.isMenuVisible = !this.isMenuVisible; 
     },
     playMusic(){
-      this.videoSrc = 'https://www.youtube.com/embed/OmRIeBtjIi8?autoplay=1';
+      if (this.videoSrc) {
+        this.videoSrc = '';
+      } else {
+        this.videoSrc = 'https://www.youtube.com/embed/OmRIeBtjIi8?autoplay=1';
+      }
     },
     vaiAiTour() {
       window.open('https://rollingstones.com/tour//', '_blank');

@@ -142,6 +142,7 @@
 }
 
 // Stili Accordion
+
 .accordion-button {
   background-color: #323844;
   color: white;
@@ -150,6 +151,7 @@
   font-weight: bold;
   text-align: left;
   padding-left: 2rem;
+  height: 105px;
   p{
     color: $livedates-text;
   }

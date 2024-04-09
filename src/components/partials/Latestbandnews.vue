@@ -178,7 +178,7 @@ export default {
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: scale(1.4);
+    transform: scale(1.6);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
     z-index: 9;
 
