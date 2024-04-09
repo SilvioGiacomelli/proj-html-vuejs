@@ -1,5 +1,55 @@
 <script>
+import blog_music_techoImage from '../../assets/images/card/blog_music_techo.jpg';
+import blog_post3Image from '../../assets/images/card/blog_post3.jpg';
+import blog_post4Image from '../../assets/images/card/blog_post4.jpg';
+import blog_flavor_rockImage from '../../assets/images/card/blog_flavor_rock.jpg';
+import blog_post1Image from '../../assets/images/card/blog_post1.jpg';
+import blog_post2Image from '../../assets/images/card/blog_post2.jpg';
 export default {
+  data() {
+    return {
+      newsItems: [
+        {
+          id: 1,
+          title: 'Technology and music',
+          text: 'Exploring how technology is changing the music industry.',
+          imgSrc: blog_music_techoImage,
+        },
+        {
+          id: 2,
+          title: 'While my guitar gently weeps',
+          text: 'A deep dive into the history of one of the greatest guitar solos ever recorded.',
+          imgSrc: blog_post3Image,
+        },
+        {
+          id: 3,
+          title: 'It just sounds better',
+          text: 'Why vinyl records still have a special place in the music lovers heart.',
+          imgSrc: blog_post4Image,
+        },
+        {
+          id: 4,
+          title: 'The flavor of rock',
+          text: 'Discovering the roots of rock music and its various flavors.',
+          imgSrc: blog_flavor_rockImage,
+        },
+        {
+          id: 5,
+          title: 'Taking it back to the old school',
+          text: 'Revisiting the classics that shaped the music of generations.',
+          imgSrc: blog_post1Image,
+        },
+        {
+          id: 6,
+          title: 'Sharing the stage with a legend',
+          text: 'The unforgettable experience of performing live with one of the greats.',
+          imgSrc: blog_post2Image,
+        }
+
+      ]
+    };
+  },
+  
   methods: {
     //FUNZIONE PER APRIRE LA PAGINA DELLE NEWS
     goToNewsPage() {
@@ -30,49 +80,49 @@ export default {
       <div class="row">
         <div class="col-8 left">
           <div class="card cinquecento">
-            <img class="card-img-top" src="../../assets/images/blog_music_techo-1200x600.jpg">
+            <img class="card-img-top" :src="newsItems[0].imgSrc" :alt="newsItems[0].title">
             <div class="card-body">
-              <h5 class="card-title">Technology and music</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">{{ newsItems[0].title }}</h5>
+              <p class="card-text">{{ newsItems[0].text }}</p>
             </div>
           </div>
           <div class="d-flex">
             <div class="card mille">
-            <img class="card-img-top" src="../../assets/images/blog-post3-600x900.jpg">
+            <img class="card-img-top" :src="newsItems[1].imgSrc" :alt="newsItems[1].title">
             <div class="card-body">
-              <h5 class="card-title">While my guitar gently weeps</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">{{ newsItems[1].title }}</h5>
+              <p class="card-text">{{ newsItems[1].text }}</p>
             </div>
           </div>
           <div class="card mille">
-            <img class="card-img-top" src="../../assets/images/blog-post4-600x900.jpg">
+            <img class="card-img-top" :src="newsItems[2].imgSrc" :alt="newsItems[2].title">
             <div class="card-body">
-              <h5 class="card-title">It just sound better</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">{{ newsItems[2].title }}</h5>
+              <p class="card-text">{{ newsItems[2].text }}</p>
             </div>
           </div>
           </div>
           <div class="card cinquecento">
-            <img class="card-img-top" src="../../assets/images/blog_flavor_rock.jpg">
+            <img class="card-img-top" :src="newsItems[3].imgSrc" :alt="newsItems[3].title">
             <div class="card-body">
-              <h5 class="card-title">The flavor of rock</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">{{ newsItems[3].title }}</h5>
+              <p class="card-text">{{ newsItems[3].text }}</p>
             </div>
           </div>
         </div>
         <div class="col-4 right">
           <div class="card mille">
-            <img class="card-img-top" src="../../assets/images/blog-post1-600x900.jpg">
+            <img class="card-img-top" :src="newsItems[4].imgSrc" :alt="newsItems[4].title">
             <div class="card-body">
-              <h5 class="card-title">Taking back to the old school</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">{{ newsItems[4].title }}</h5>
+              <p class="card-text">{{ newsItems[4].text }}</p>
             </div>
           </div>
           <div class="card mille">
-            <img class="card-img-top" src="../../assets/images/blog-post2-600x900.jpg">
+            <img class="card-img-top" :src="newsItems[5].imgSrc" :alt="newsItems[5].title">
             <div class="card-body">
-              <h5 class="card-title">Sharing the stage witha a legend</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">{{ newsItems[5].title }}</h5>
+              <p class="card-text">{{ newsItems[5].text }}</p>
             </div>
           </div>
         </div>
