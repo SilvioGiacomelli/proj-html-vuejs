@@ -30,6 +30,7 @@
 @import '../../assets/scss/partials/_variables.scss';
 
 .total{
+  margin-top: 100px;
   min-height: 100%;
   background-color: $music-islife-bg;
   color: white;

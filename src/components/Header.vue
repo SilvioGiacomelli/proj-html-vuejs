@@ -14,7 +14,14 @@ export default {
       isMenuVisible: false,
       videoSrc: '',
       store,
+      isReduced: false,
     };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
     toggleMenu() {
@@ -29,13 +36,16 @@ export default {
     },
     vaiAiTour() {
       window.open('https://rollingstones.com/tour//', '_blank');
-    }
+    },
+    onScroll() {
+      this.isReduced = window.pageYOffset > 100; // Set a scroll threshold
+    },
   }
 }
 </script>
 
 <template>
-  <header class="container-fluid">
+  <header class="container-fluid" :class="{ 'reduced': isReduced }">
     <iframe
       width="1"
       height="1"
@@ -66,11 +76,11 @@ export default {
             class="escape">
         </div>
         <ul class="menu text-center">
-          <li v-for="item in store.menuItems" :key="item.id">{{ item.text }}</li>
+          <li v-for="item in store.menuItems" :key="item.id"> {{ item.text }} </li>
         </ul>
       </div>
     </div>
-    <div class="row mt-5">
+    <div class="row mt-5" v-if="!isReduced">
       <div class="col-12 text-center center">
         <h1>Untold Stories</h1>
         <h6>There is an untold story behind every favorite song.</h6>
@@ -93,20 +103,30 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/scss/partials/_variables.scss';
 
-  header {
-    width: 100%; 
-    height: 1300px; 
-    background-image: url('../assets/images/home_slider.jpg'); 
-    background-position: center; 
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    display: flex; 
-    flex-direction: column;
-    justify-content: flex-start; 
-    align-items: center; 
-    color: white; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+header {
+  width: 100vw;
+  height: 100vh; 
+  background-image: url('../assets/images/home_slider.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  transition: height 0.3s ease-in-out;  
+  z-index: 1000; 
+  &.reduced {
+    height: 5px; 
+    padding: 0 1rem; 
+    justify-content: flex-start;
   }
+}
 
   .center {
   height: 100%; 
