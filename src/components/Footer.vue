@@ -1,6 +1,18 @@
 <script>
-  export default {    
+export default {
+  data() {
+    return {
+      menuItems: [
+        'Home',
+        'Meet the Band',
+        'Live Dates',
+        'Latest News',
+        'Albums',
+        'Fans'
+      ]
+    }
   }
+}
 </script>
 
 <template>
@@ -9,14 +21,9 @@
     class="ms-5" 
     src="../assets/images/avada-music-logo.png"
     alt="">
-      <ul class="d-flex lista-indice">
-        <li>Home</li>
-        <li>Meet the Band</li>
-        <li>Live Dates</li>
-        <li>Latest News</li>
-        <li>Albums</li>
-        <li>Fans</li>
-      </ul>
+    <ul class="d-flex lista-indice">
+      <li v-for="(menuItem, index) in menuItems" :key="index">{{ menuItem }}</li>
+    </ul>
   </div>
   <div class="container-fluid footer-down d-flex justify-content-between align-items-center px-5">
     <div class="text-footer">

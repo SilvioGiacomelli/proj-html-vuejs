@@ -49,7 +49,7 @@
     methods: {
       vaiAiTour() {
       window.open('https://rollingstones.com/tour//', '_blank');
-    }
+      }
     }
   }
 </script>

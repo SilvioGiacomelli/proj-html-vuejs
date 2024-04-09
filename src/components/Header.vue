@@ -22,6 +22,9 @@ export default {
     },
     playMusic(){
       this.videoSrc = 'https://www.youtube.com/embed/OmRIeBtjIi8?autoplay=1';
+    },
+    vaiAiTour() {
+      window.open('https://rollingstones.com/tour//', '_blank');
     }
   }
 }
@@ -68,8 +71,14 @@ export default {
         <h1>Untold Stories</h1>
         <h6>There is an untold story behind every favorite song.</h6>
         <div>
-          <button type="button" class="btn btn-danger">LATEST ALBUM</button>
-          <button type="button" class="btn btn-transparent transparent">LIVE DATES</button>
+          <button 
+          type="button" 
+          class="btn btn-danger">LATEST ALBUM</button>
+          <button 
+          type="button" 
+          class="btn btn-transparent transparent"
+          @click="vaiAiTour"
+          >LIVE DATES</button>
         </div>
       </div>
     </div>

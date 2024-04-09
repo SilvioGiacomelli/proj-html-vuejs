@@ -82,7 +82,7 @@ export default {
           <div class="card cinquecento">
             <img class="card-img-top" :src="newsItems[0].imgSrc" :alt="newsItems[0].title">
             <div class="card-body">
-              <h5 class="card-title">{{ newsItems[0].title }}</h5>
+              <h5 class="card-title titolo">{{ newsItems[0].title }}</h5>
               <p class="card-text">{{ newsItems[0].text }}</p>
             </div>
           </div>
@@ -90,14 +90,14 @@ export default {
             <div class="card mille">
             <img class="card-img-top" :src="newsItems[1].imgSrc" :alt="newsItems[1].title">
             <div class="card-body">
-              <h5 class="card-title">{{ newsItems[1].title }}</h5>
+              <h5 class="card-title titolo">{{ newsItems[1].title }}</h5>
               <p class="card-text">{{ newsItems[1].text }}</p>
             </div>
           </div>
           <div class="card mille">
             <img class="card-img-top" :src="newsItems[2].imgSrc" :alt="newsItems[2].title">
             <div class="card-body">
-              <h5 class="card-title">{{ newsItems[2].title }}</h5>
+              <h5 class="card-title titolo">{{ newsItems[2].title }}</h5>
               <p class="card-text">{{ newsItems[2].text }}</p>
             </div>
           </div>
@@ -105,7 +105,7 @@ export default {
           <div class="card cinquecento">
             <img class="card-img-top" :src="newsItems[3].imgSrc" :alt="newsItems[3].title">
             <div class="card-body">
-              <h5 class="card-title">{{ newsItems[3].title }}</h5>
+              <h5 class="card-title titolo">{{ newsItems[3].title }}</h5>
               <p class="card-text">{{ newsItems[3].text }}</p>
             </div>
           </div>
@@ -114,14 +114,14 @@ export default {
           <div class="card mille">
             <img class="card-img-top" :src="newsItems[4].imgSrc" :alt="newsItems[4].title">
             <div class="card-body">
-              <h5 class="card-title">{{ newsItems[4].title }}</h5>
+              <h5 class="card-title titolo">{{ newsItems[4].title }}</h5>
               <p class="card-text">{{ newsItems[4].text }}</p>
             </div>
           </div>
           <div class="card mille">
             <img class="card-img-top" :src="newsItems[5].imgSrc" :alt="newsItems[5].title">
             <div class="card-body">
-              <h5 class="card-title">{{ newsItems[5].title }}</h5>
+              <h5 class="card-title titolo">{{ newsItems[5].title }}</h5>
               <p class="card-text">{{ newsItems[5].text }}</p>
             </div>
           </div>
@@ -150,7 +150,7 @@ export default {
     font-weight: bolder;
     }
   p{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 2%;
     color: $music-islife-text;
     }
@@ -164,6 +164,11 @@ export default {
   margin-top: 1%;
   margin-bottom: 1%;
   }
+
+.titolo{
+  color: $livedates-text;
+  font-weight: bold;
+}
 
 .card {
   position: relative;
