@@ -1,3 +1,5 @@
+//OBSOLETO
+
 const accordionData = [
   {
     date: "17/08/2020",

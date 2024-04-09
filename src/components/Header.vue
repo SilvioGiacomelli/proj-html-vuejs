@@ -1,10 +1,19 @@
 <script>
-import {store} from './partials/data/store'
+import { store } from './partials/data/store';
+
 export default {
+  props: {
+    menuItems: {
+      type: Array,
+      required: true,
+      default: () => []
+    }
+  },
   data(){
     return{
       isMenuVisible: false,
       videoSrc: '',
+      store,
     };
   },
   methods: {
@@ -25,48 +34,43 @@ export default {
       height="1"
       :src="videoSrc"
       frameborder="0"
-      allow="encrypted-media;"
-      >
-    </iframe>
+      allow="autoplay; encrypted-media;"
+      allowfullscreen
+    ></iframe>
     <div class="d-flex justify-content-between headbar">
-        <img 
+      <img 
         src="../assets/images/avada-music-logo.png" 
         @click="playMusic"
-        class="musci-button"
-        alt="">
-        <span 
+        class="music-button"
+        alt="Music logo">
+      <span 
         class="burger"
         @click="toggleMenu">
-          <i class="fa-solid fa-bars"></i>
-        </span>
-        <div 
+        <i class="fa-solid fa-bars"></i>
+      </span>
+      <div 
         class="full-page-menu" 
         v-if="isMenuVisible">
         <div class="logo-container">
-          <img src="../assets/images/avada-music-logo.png" alt="AVADA MUSIC"
-          @click="toggleMenu"
-          class="escape"></img>
+          <img 
+            src="../assets/images/avada-music-logo.png" 
+            alt="AVADA MUSIC"
+            @click="toggleMenu"
+            class="escape">
         </div>
-          <ul class="menu text-center">
-            <li>Home</li>
-            <li>Meet The Band</li>
-            <li>Live Dates</li>
-            <li>Latest News</li>
-            <li>Albums</li>
-            <li>Fans</li>
-          </ul>
-        </div>
+        <ul class="menu text-center">
+          <li v-for="item in store.menuItems" :key="item.id">{{ item.text }}</li>
+        </ul>
       </div>
-    <div class="row mt-5 ">
+    </div>
+    <div class="row mt-5">
       <div class="col-12 text-center center">
-        <h1 class="text-center">Untold Stories</h1>
+        <h1>Untold Stories</h1>
         <h6>There is an untold story behind every favorite song.</h6>
         <div>
           <button type="button" class="btn btn-danger">LATEST ALBUM</button>
-          <button type="button" class="btn btn-transparent trasparente">LIVE DATES</button>
+          <button type="button" class="btn btn-transparent transparent">LIVE DATES</button>
         </div>
-
-
       </div>
     </div>
   </header>

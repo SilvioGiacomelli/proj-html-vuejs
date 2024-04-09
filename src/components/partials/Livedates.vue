@@ -82,7 +82,7 @@
                 :data-bs-target="`#flush-collapse${index}`"
                 aria-expanded="false" 
                 :aria-controls="`flush-collapse${index}`">
-                  <span>+</span>{{ item.date }} {{ item.name }} {{ item.location }}
+                  <p class="acc-text"> {{ item.date }} {{ item.name }} {{ item.location }} </p>
                 </button>
               </h2>
               <div 
@@ -114,79 +114,129 @@
 <style lang="scss" scoped>
 @import '../../assets/scss/partials/_variables.scss';
 
-.total{
+.total {
   min-height: 100%;
   background-color: $livedates-bg;
   color: white;
-  h2{
+
+  h2 {
     margin-top: 4%;
     font-size: 6rem;
     font-weight: bolder;
-    }
-  p{
-    font-size: 2rem;
-    margin: 2%;
-    color: $livedates-text;
-    margin: 0 20%;
-    color: $livedates-text-grey;
-    }
   }
 
-  .grey-bar {
+  p {
+    font-size: 2rem;
+    margin: 0 20%;
+    color: $livedates-text-grey;
+  }
+}
+
+.grey-bar {
   margin: 0 auto;
   background-color: $music-islife-gbar;
   width: 18%;
   height: 3px;
   margin-top: 1%;
   margin-bottom: 1%;
+}
+
+// Stili Accordion
+.accordion-button {
+  background-color: #323844;
+  color: white;
+  position: relative;
+  border: none;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 2rem;
+  p{
+    color: $livedates-text;
   }
 
-button{
-  color:$livedates-text;
-  font-weight: bold;
-  span{
-    color: white;
-    margin: 5px;
-    padding: 5px 7px;
+  &:hover {
+    background-color: lighten(#323844, 5%);
+  }
+
+  &::before {
+    content: '+'; 
+    position: absolute;
+    left: 0.5rem; 
+    top: 50%;
+    transform: translateY(-50%); 
+    color: white; 
+    width: 1.5rem; 
+    height: 1.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2px; 
+  }
+
+
+  &:not(.collapsed)::before {
+    
+    content: '-';
     background-color: $livedates-text;
   }
 }
 
-//ACCORDION
-.accordion-button{
+.accordion-item {
   background-color: #323844;
+  .accordion-header {
+    .accordion-button {
+      padding-left: 32px;       
+      border-bottom: none;
+    }
   }
 
-.accordion-body{
-  background-color: #323844;
-}
-.accordion-header{
-  background-color: #323844;
-}
-.accordion-collapse{
-  background-color: #323844;
+  .accordion-collapse {
+    background-color: #323844;
+    color: white;
+  }
+
 }
 
-.testo{
-  color: $livedates-text-grey;
-  font-size: 1rem;
+.accordion-body {
+  padding: 1rem;
+  border-top: none; 
+}
+
+.testo {
   margin-left: 5%;
+  color: $livedates-text-grey;
+
+  h4 {
+    margin-top: 0;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  span {
+    font-size: 1rem;
+  }
 }
 
-.dates{
-    background-color: $news-background;
-    height: 300px;
-    cursor: pointer;
-    &:hover {
+
+.dates {
+  background-color: $news-background;
+  height: 300px;
+  cursor: pointer;
+
+  &:hover {
     background-color: white;
+
     h3 {
       color: black;
     }
   }
+
+  h3 {
+    font-size: 2rem;
+    color: white;
+    margin: 0; 
+  }
 }
 
-h3 {
-  font-size: 2rem;
-  color: white; 
-}
 </style>
