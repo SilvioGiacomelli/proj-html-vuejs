@@ -1,40 +1,12 @@
 <script>
 import { store } from './partials/data/store';
 export default {
-    props: {
-      icons: {
-        type: Array,
-        required: true,
-        default: () => [
-      { 
-        id:   1, 
-        font: 'fa-brands fa-facebook-f', 
-        link: 'https://www.facebook.com/' 
-      },
-      { 
-        id:   2, 
-        font: 'fa-brands fa-x-twitter', 
-        link: 'https://twitter.com/' 
-      },
-      { 
-        id:   3, 
-        font: 'fa-brands fa-instagram', 
-        link: 'https://www.instagram.com/' 
-      },
-      { 
-        id:   4, 
-        font: 'fa-brands fa-youtube', 
-        link: 'https://www.youtube.com/' 
-      },
-    ]
-  },
   methods: {    
     playClickSound() {
       const audio = new Audio('../assets/audio/click.mp3');
       audio.play();
     },
-  }
-},
+  },
   data() {
     return {
       store,
@@ -49,6 +21,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <template>
@@ -68,13 +41,13 @@ export default {
       <span>© Copyright 2022 - 2020 | AVADA THEME BY THEMEFUSION | ALL RIGHTS RESERVED | POWERED BY WORDPRESS</span>
     </div>
     <div class="icons-footer">
-    <a v-for="icon in icons" 
-    :key="icon.id" 
-    :href="icon.link" 
+    <a v-for="(icons, index) in store.icons" 
+    :key="icons.id" 
+    :href="icons.link" 
     target="_blank"
     @click="playClickSound"
     >
-      <i :class="['fa', icon.font]"></i>
+      <i :class="['fa-brands', icons.font]"></i>
     </a>
   </div>
   </div>
