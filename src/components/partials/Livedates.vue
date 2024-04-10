@@ -244,13 +244,19 @@
   background-color: $news-background;
   height: 300px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
     h3 {
       color: black;
     }
+    &:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  }
   }
 
   h3 {
