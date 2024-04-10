@@ -38,7 +38,7 @@ export default {
       window.open('https://rollingstones.com/tour//', '_blank');
     },
     onScroll() {
-      this.isReduced = window.pageYOffset > 100; // Set a scroll threshold
+      this.isReduced = window.pageYOffset > 20;
     },
   }
 }
