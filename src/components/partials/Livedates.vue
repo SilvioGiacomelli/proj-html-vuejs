@@ -20,28 +20,28 @@
           name: "GROOVEFEST",
           location: "DOMINICAL REPUBLIC",
           imgSrc: DominicalImage,
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur."
+          content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, reprehenderit! Pariatur eveniet praesentium, iste ipsam ad voluptatem beatae omnis quis sequi? Modi sapiente, excepturi distinctio aliquam ad voluptate aspernatur debitis nihil atque, vel ipsa repellat eveniet deserunt tempora nobis dolorum?"
         },
         {
           date: "31/10/2020",
           name: "OASIS FESTIVAL 2020",
           location: "MARRAKECH, MOROCCO",
           imgSrc: MarrakechImage , 
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur."
+          content: "Lorem ipsum dolor sit amet, Modi sapiente, excepturi distinctio aliquam ad voluptate aspernatur debitis nihil atque, vel ipsa repellat eveniet deserunt tempora nobis dolorum?consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur."
         },
         {
           date: "07/11/2020",
           name: "MOGA FESTIVAL 2020",
           location: "ESSAOURIA, MOROCCO",
           imgSrc: EssaouiraImage,
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur."
+          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur spernatur debitis nihil atque, vel ipsa repellat eveniet deserunt tempora nobis dolorum?c."
         },
         {
           date: "10/12/2020",
           name: "ENVISION FESTIVAL",
           location: "UVITA, COSTA RICA",
           imgSrc: UvitaImage,
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur."
+          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur praesentium, iste ipsam ad voluptatem beatae omnis quis sequi?."
         }
         ]
       }
@@ -92,17 +92,26 @@
               data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body d-flex"> 
                   <img :src="item.imgSrc" :alt="`Image of ${item.name}`">
-                  <div class="testo">
-                    <h4> {{ item.name }} </h4>
-                    <span> {{ item.content }} </span>
-                  </div> 
+                    <div class="testo d-flex flex-column ">
+                      <ul>
+                        <li>
+                          <h4> {{ item.name }} </h4>
+                          <span> {{ item.content }} </span>
+                        </li>
+                        <li>
+                        <div>
+                          <button class=" btn-acc btn mt-5" style="color: white;">Button</button>
+                        </div>
+                        </li>
+                      </ul>
+                    </div> 
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     <div 
     class="dates d-flex align-items-center justify-content-center"
     @click="vaiAiTour">
@@ -142,6 +151,13 @@
 }
 
 // Stili Accordion
+
+.btn-acc{
+  background-color: $livedates-text;
+  font-size: 1.8rem;
+  display: flex-end;
+  padding: 0 3%;
+}
 
 .accordion-button {
   background-color: #323844;
@@ -207,16 +223,19 @@
 .testo {
   margin-left: 5%;
   color: $livedates-text-grey;
+  ul{
+    list-style: none;
+  }
 
   h4 {
-    margin-top: 0;
+    margin-top: 2%;
     color: white;
     font-size: 2rem;
-    font-weight: bold;
+    margin-bottom: 2%;
   }
 
   span {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
