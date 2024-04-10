@@ -1,57 +1,31 @@
 <script>
-  import AnakaliaImage from '../../assets/images/maps/Anakalia.png';
-  import DominicalImage from '../../assets/images/maps/Dominical.png';
-  import MarrakechImage from '../../assets/images/maps/Marrakech.png';
-  import EssaouiraImage from '../../assets/images/maps/Essaouira.png';
-  import UvitaImage from '../../assets/images/maps/Uvita.png';
+  //IMPORTO IMMAGINI LA CARTELLA ASSETS
+  import { store } from '../../components/partials/data/store';
   export default {
+    components: {
+      store
+    },
     data() {
       return {
-        accordionData: [
-        {
-          date: "17/08/2020",
-          name: "GEM FESTIVAL 2020",
-          location: "ANAKALIA, GEORGIA",
-          imgSrc: AnakaliaImage,
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur."
-        },
-        {
-          date: "24/9/2020",
-          name: "GROOVEFEST",
-          location: "DOMINICAL REPUBLIC",
-          imgSrc: DominicalImage,
-          content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, reprehenderit! Pariatur eveniet praesentium, iste ipsam ad voluptatem beatae omnis quis sequi? Modi sapiente, excepturi distinctio aliquam ad voluptate aspernatur debitis nihil atque, vel ipsa repellat eveniet deserunt tempora nobis dolorum?"
-        },
-        {
-          date: "31/10/2020",
-          name: "OASIS FESTIVAL 2020",
-          location: "MARRAKECH, MOROCCO",
-          imgSrc: MarrakechImage , 
-          content: "Lorem ipsum dolor sit amet, Modi sapiente, excepturi distinctio aliquam ad voluptate aspernatur debitis nihil atque, vel ipsa repellat eveniet deserunt tempora nobis dolorum?consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur."
-        },
-        {
-          date: "07/11/2020",
-          name: "MOGA FESTIVAL 2020",
-          location: "ESSAOURIA, MOROCCO",
-          imgSrc: EssaouiraImage,
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur spernatur debitis nihil atque, vel ipsa repellat eveniet deserunt tempora nobis dolorum?c."
-        },
-        {
-          date: "10/12/2020",
-          name: "ENVISION FESTIVAL",
-          location: "UVITA, COSTA RICA",
-          imgSrc: UvitaImage,
-          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nulla nec nibh consequat, sit amet convallis purus efficitur praesentium, iste ipsam ad voluptatem beatae omnis quis sequi?."
-        }
-        ]
+        store
       }
     },
     methods: {
-      vaiAiTour() {
-      window.open('https://rollingstones.com/tour//', '_blank');
-      }
+      // APRE UNA NUOVA FINESTRA SUL SITO ESTERNO
+        vaiAiTour() {
+        window.open('https://rollingstones.com/tour//', '_blank');
+        this.playClickSound();
+        },
+      // FUNZIONE PER FAR SUONARE IL SUONO DEL CLICK
+        playClickSound() {
+        const audio = new Audio('../../assets/audio/click.mp3');
+        audio.play();
+        },
+        getImagePath(imgPath) {
+        return new URL(`../../assets/images/maps/${imgPath}`, import.meta.url).href
+        },
+      },
     }
-  }
 </script>
 
 <template>
@@ -73,7 +47,7 @@
       <div class="row">
         <div class="col-12">
           <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item" v-for="(item, index) in accordionData" :key="index">
+            <div class="accordion-item" v-for="(item, index) in store.accordionData" :key="index">
               <h2 class="accordion-header" :id="`flush-heading${index}`">
                 <button 
                 class="accordion-button collapsed" 
@@ -91,7 +65,7 @@
               :aria-labelledby="`flush-heading${index}`" 
               data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body d-flex"> 
-                  <img :src="item.imgSrc" :alt="`Image of ${item.name}`">
+                  <img :src="getImagePath(item.imgSrc)" :alt="`Image of ${item.name}`">
                     <div class="testo d-flex flex-column ">
                       <ul>
                         <li>
@@ -150,7 +124,7 @@
   margin-bottom: 1%;
 }
 
-// Stili Accordion
+// STILI ACCORDION
 
 .btn-acc{
   background-color: $livedates-text;
@@ -177,7 +151,7 @@
   }
 
   &::before {
-    content: '+'; 
+    content: '+'; //IMPOSTO IL CONTENUTO DA INSERIRE
     position: absolute;
     left: 0.5rem; 
     top: 50%;
@@ -194,7 +168,7 @@
 
   &:not(.collapsed)::before {
     
-    content: '-';
+    content: '-';     //SOSTITUISCO IL CONTENUTO
     background-color: $livedates-text;
   }
 }

@@ -1,6 +1,5 @@
 <script>
 import { store } from './partials/data/store';
-
 export default {
   props: {
     menuItems: {
@@ -24,9 +23,11 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
+    //METODO PER APRIRE IL MENU BURGER
     toggleMenu() {
       this.isMenuVisible = !this.isMenuVisible; 
     },
+    //METODO PER ATTIVARE LA MUSICA
     playMusic(){
       if (this.videoSrc) {
         this.videoSrc = '';
@@ -34,11 +35,18 @@ export default {
         this.videoSrc = 'https://www.youtube.com/embed/OmRIeBtjIi8?autoplay=1';
       }
     },
+    //METODO PER APRIRE LA PAGINA DEI TOUR
     vaiAiTour() {
       window.open('https://rollingstones.com/tour//', '_blank');
+      this.playClickSound();
     },
+    //METODO PER REGOLARE LA CHIUSURA DELL'HEADER
     onScroll() {
       this.isReduced = window.pageYOffset > 20;
+    },
+    playClickSound() {
+      const audio = new Audio('../assets/audio/click.mp3');
+      audio.play();
     },
   }
 }
@@ -76,6 +84,7 @@ export default {
             class="escape">
         </div>
         <ul class="menu text-center">
+          <!-- MENU BURGER -->
           <li v-for="item in store.menuItems" :key="item.id"> {{ item.text }} </li>
         </ul>
       </div>

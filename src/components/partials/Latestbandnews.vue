@@ -5,7 +5,11 @@ import blog_post4Image from '../../assets/images/card/blog_post4.jpg';
 import blog_flavor_rockImage from '../../assets/images/card/blog_flavor_rock.jpg';
 import blog_post1Image from '../../assets/images/card/blog_post1.jpg';
 import blog_post2Image from '../../assets/images/card/blog_post2.jpg';
-export default {
+import { store } from '../../components/partials/data/store';
+export default {  
+  components: { 
+    store 
+  },
   data() {
     return {
       newsItems: [
@@ -54,7 +58,12 @@ export default {
     //FUNZIONE PER APRIRE LA PAGINA DELLE NEWS
     goToNewsPage() {
       window.open('https://www.rollingstone.it/musica/news-musica/', '_blank');
-    }
+      this.playClickSound();
+    },
+    playClickSound() {
+        const audio = new Audio('../../assets/audio/click.mp3');
+        audio.play();
+        },
   }
 }
 </script>
@@ -80,6 +89,7 @@ export default {
       <div class="row">
         <div class="col-8 left">
           <div class="card cinquecento">
+            <!-- CARD COLLEGATE ALL'ARRAY DI OGGETTI -->
             <img class="card-img-top" :src="newsItems[0].imgSrc" :alt="newsItems[0].title">
             <div class="card-body">
               <h5 class="card-title titolo">{{ newsItems[0].title }}</h5>
@@ -128,6 +138,7 @@ export default {
         </div>
       </div>
     </div>
+    <!-- BOTTONE PER VEDERE LE ULTIME NOTIZIE -->
     <div 
     class="news d-flex align-items-center justify-content-center" 
     @click="goToNewsPage">
