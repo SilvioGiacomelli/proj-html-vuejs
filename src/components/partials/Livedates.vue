@@ -16,7 +16,7 @@
         window.open('https://rollingstones.com/tour//', '_blank');
         this.playClickSound();
         },
-      // FUNZIONE PER FAR SUONARE IL SUONO DEL CLICK
+      // FUNZIONE PER FAR SUONARE IL SUONO DEL CLICK [DA INTEGRARE]
         playClickSound() {
         const audio = new Audio('../../assets/audio/click.mp3');
         audio.play();

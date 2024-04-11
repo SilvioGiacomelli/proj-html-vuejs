@@ -19,42 +19,42 @@ export default {
           title: 'Technology and music',
           text: 'Exploring how technology is changing the music industry.',
           imgSrc: blog_music_techoImage,
-          link:'',
+          link: '',
         },
         {
           id: 2,
           title: 'While my guitar gently weeps',
           text: 'A deep dive into the history of one of the greatest guitar solos ever recorded.',
           imgSrc: blog_post3Image,
-          link:'',
+          link: '',
         },
         {
           id: 3,
           title: 'It just sounds better',
           text: 'Why vinyl records still have a special place in the music lovers heart.',
           imgSrc: blog_post4Image,
-          link:'',
+          link: '',
         },
         {
           id: 4,
           title: 'The flavor of rock',
           text: 'Discovering the roots of rock music and its various flavors.',
           imgSrc: blog_flavor_rockImage,
-          link:'',
+          link: ''
         },
         {
           id: 5,
           title: 'Taking it back to the old school',
           text: 'Revisiting the classics that shaped the music of generations.',
           imgSrc: blog_post1Image,
-          link:'',
+          link: '',
         },
         {
           id: 6,
           title: 'Sharing the stage with a legend',
           text: 'The unforgettable experience of performing live with one of the greats.',
           imgSrc: blog_post2Image,
-          link:'',
+          link: '',
         }
       ]
     };
@@ -71,13 +71,10 @@ export default {
         audio.play();
     },
     gestioneClick(item) {
-      if (item.link) {
-        window.location.href = item.link;
-      } else {
-        console.log('Link per', item.title, 'verrà aggiunto in futuro.');
-      }
+    const url = item.link || '#';
+    console.log(`In attesa di un url verso ${url}`); 
+  },
   }
-}
 }
 </script>
 
@@ -93,40 +90,40 @@ export default {
       <div class="col-12">
         <div class="grey-bar"></div>
 
-        <div class="container text-center my-5 ">
+        <div class="container text-center my-5">
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam iusto nemo itaque commodi similique recusandae voluptatibus nam reprehenderit labore dolorum quae, impedit facere modi incidunt voluptas assumenda! Consequatur ad dicta adipisci? Alias minus dolore molestiae?</p>
         </div>
       </div>
     </div>
-    <div class="container cards pb-5 ">
+    <div class="container cards pb-5">
       <div class="row">
         <div class="col-8 left">
-          <div class="card cinquecento">
-            <!-- CARD COLLEGATE ALL'ARRAY DI OGGETTI -->
-            <img class="card-img-top" @click="gestioneClick(item.link)" :src="newsItems[0].imgSrc" :alt="newsItems[0].title">
+          <!-- CARD COLLEGATE ALL'ARRAY DI OGGETTI -->
+          <div class="card cinquecento" @click="gestioneClick (newsItems)[0].link">
+            <img class="card-img-top" :src="newsItems[0].imgSrc" :alt="newsItems[0].title">
             <div class="card-body">
               <h5 class="card-title titolo">{{ newsItems[0].title }}</h5>
               <p class="card-text">{{ newsItems[0].text }}</p>
             </div>
           </div>
           <div class="d-flex">
-            <div class="card mille">
-            <img class="card-img-top" @click="gestioneClick(item.link)" :src="newsItems[1].imgSrc" :alt="newsItems[1].title">
+            <div class="card mille" @click="gestioneClick (newsItems)[1].link">
+            <img class="card-img-top" :src="newsItems[1].imgSrc" :alt="newsItems[1].title">
             <div class="card-body">
               <h5 class="card-title titolo">{{ newsItems[1].title }}</h5>
               <p class="card-text">{{ newsItems[1].text }}</p>
             </div>
           </div>
-          <div class="card mille">
-            <img class="card-img-top" @click="gestioneClick(item.link)" :src="newsItems[2].imgSrc" :alt="newsItems[2].title">
+          <div class="card mille" @click="gestioneClick (newsItems)[2].link">
+            <img class="card-img-top" :src="newsItems[2].imgSrc" :alt="newsItems[2].title">
             <div class="card-body">
               <h5 class="card-title titolo">{{ newsItems[2].title }}</h5>
               <p class="card-text">{{ newsItems[2].text }}</p>
             </div>
           </div>
           </div>
-          <div class="card cinquecento">
-            <img class="card-img-top" @click="gestioneClick(item.link)" :src="newsItems[3].imgSrc" :alt="newsItems[3].title">
+          <div class="card cinquecento" @click="gestioneClick (newsItems)[3].link">
+            <img class="card-img-top" :src="newsItems[3].imgSrc" :alt="newsItems[3].title">
             <div class="card-body">
               <h5 class="card-title titolo">{{ newsItems[3].title }}</h5>
               <p class="card-text">{{ newsItems[3].text }}</p>
@@ -134,15 +131,15 @@ export default {
           </div>
         </div>
         <div class="col-4 right">
-          <div class="card mille">
-            <img class="card-img-top" @click="gestioneClick(item.link)" :src="newsItems[4].imgSrc" :alt="newsItems[4].title">
+          <div class="card mille" @click="gestioneClick (newsItems)[4].link">
+            <img class="card-img-top" :src="newsItems[4].imgSrc" :alt="newsItems[4].title">
             <div class="card-body">
               <h5 class="card-title titolo">{{ newsItems[4].title }}</h5>
               <p class="card-text">{{ newsItems[4].text }}</p>
             </div>
           </div>
-          <div class="card mille">
-            <img class="card-img-top" @click="gestioneClick(item.link)" :src="newsItems[5].imgSrc" :alt="newsItems[5].title">
+          <div class="card mille" @click="gestioneClick (newsItems)[5].link">
+            <img class="card-img-top" :src="newsItems[5].imgSrc" :alt="newsItems[5].title">
             <div class="card-body">
               <h5 class="card-title titolo">{{ newsItems[5].title }}</h5>
               <p class="card-text">{{ newsItems[5].text }}</p>
