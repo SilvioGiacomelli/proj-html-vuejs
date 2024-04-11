@@ -103,7 +103,7 @@ export default {
         <div class="col-8 left">
           <div class="card cinquecento">
             <!-- CARD COLLEGATE ALL'ARRAY DI OGGETTI -->
-            <img class="card-img-top" @click="handleCardClick(item.link)" :src="newsItems[0].imgSrc" :alt="newsItems[0].title">
+            <img class="card-img-top" @click="gestioneClick(item.link)" :src="newsItems[0].imgSrc" :alt="newsItems[0].title">
             <div class="card-body">
               <h5 class="card-title titolo">{{ newsItems[0].title }}</h5>
               <p class="card-text">{{ newsItems[0].text }}</p>
